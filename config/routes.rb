@@ -1,4 +1,8 @@
 SampleApp2::Application.routes.draw do
+#new rev
+  get "static_pages/home"
+  get "static_pages/help"
+#new rev
   resources :users do
     member do
       get :following, :followers
