@@ -12,7 +12,8 @@ def make_users
                        email:    "example@railstutorial.org",
                        password: "foobar",
                        password_confirmation: "foobar",
-                       admin: true)
+                       admin: true,
+                       superWriter: true)
   99.times do |n|
     name  = Faker::Name.name
     email = "example-#{n+1}@railstutorial.org"

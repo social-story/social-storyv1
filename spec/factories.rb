@@ -8,6 +8,9 @@ FactoryGirl.define do
     factory :admin do
       admin true
     end
+    factory :superWriter do
+      superWriter true
+    end
   end
     factory :micropost do
     content "Lorem ipsum"
