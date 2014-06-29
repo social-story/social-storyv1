@@ -1,0 +1,9 @@
+<li>
+  <%= gravatar_for user, size: 52 %>
+  <%= link_to user.name, user %>
+  <% if current_user.superWriter? && !current_user?(user) %>
+    | <%= link_to "Add story", story_path %>
+  <% end %>
+</li>
+
+

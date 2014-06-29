@@ -47,4 +47,14 @@ ActiveRecord::Schema.define(version: 20140628022233) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
+  create_table "ustories", force: true do |t|
+    t.string   "story"
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ustories", ["user_id", "topic_id", "created_at"], name: "index_ustories_on_user_id_and_topic_id_and_created_at"
+
 end
