@@ -3,7 +3,7 @@ class CreateUstories < ActiveRecord::Migration
     create_table :ustories do |t|
       t.string :story
       t.integer :user_id
-      t.integer :topic_id
+      t.integer :micropost_id
 
       t.timestamps
     end

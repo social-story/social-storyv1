@@ -13,6 +13,11 @@ def index
 def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @ustory=Ustory.new
+ #  @micropost  = current_user.microposts.build if signed_in?
+ #   @ustories = @micropost.ustories
+#    @ustory = current_user.ustories.build(:micropost => @micropost) if signed_in?
+ 
   end
 
   def new

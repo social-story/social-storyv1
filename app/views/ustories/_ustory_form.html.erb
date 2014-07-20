@@ -1,0 +1,6 @@
+<%= form_for @ustory do |f| %>
+  <%= hidden_field_tag :micropost_id, @micropost.id %>
+  <div id="ustory_field">
+    <%= f.text_field :content, placeholder: "Say Something..." %>
+  </div>
+<% end %>
