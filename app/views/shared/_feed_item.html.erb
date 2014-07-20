@@ -3,8 +3,8 @@
     <span class="user">
       <%= link_to feed_item.user.name, feed_item.user %>
     </span>
-   <span class="micropost">
-      <%= link_to feed_item.content, feed_item.ustories %>
+   <span class="content">
+      <%= link_to feed_item.content, feed_item.user %>
     </span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
