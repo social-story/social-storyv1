@@ -1,5 +1,5 @@
-class MicropostsController < ApplicationController
-#  before_action :signed_in_user
+class UstoriesController < ApplicationController
+  before_action :signed_in_user
 
  # def create
 #@micropost = Micropost.find params[:micropost_id]
@@ -23,5 +23,14 @@ def create
       render 'shared/_ustory_form'
     end
   end
+  def new
+   self.resource = resource_class.new(sign_in_params)
+    clean_up_passwords(resource)
+    respond_with(resource, serialize_options(resource))
+end
+ def ustory_params
+      params.require(:ustory).permit(:story)
+    end
+
 end
 

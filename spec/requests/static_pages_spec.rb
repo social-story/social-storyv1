@@ -7,9 +7,10 @@ describe "Static pages" do
   describe "Home page" do
     before { visit root_path }
 
-    it { should have_content('Sample App2') }
+    #it { should have_content('Sample App') }
     it { should have_title(full_title('')) }
     it { should_not have_title('| Home') }
+  
     describe "for signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
       before do
@@ -37,13 +38,14 @@ describe "Static pages" do
       end
     end
   end
-
+  
   describe "Help page" do
     before { visit help_path }
 
     it { should have_content('Help') }
     it { should have_title(full_title('Help')) }
   end
+  
 
   describe "About page" do
     before { visit about_path }
@@ -55,22 +57,7 @@ describe "Static pages" do
   describe "Contact page" do
     before { visit contact_path }
 
-    it { should have_selector('h1', text: 'Contact') }
+    it { should have_content('Contact') }
     it { should have_title(full_title('Contact')) }
- end
-#new modi
- it "should have the right links on the layout" do
-    visit root_path
-    click_link "About"
-    expect(page).to have_title(full_title('About Us'))
-    click_link "Help"
-    expect(page).to have_title(full_title('Help'))
-    click_link "Home"
-    click_link "contact"
-    expect(page).to have_title(full_title('Contact'))
-#    click_link "Sign up now!"
- #   expect(page).to have_title(full_title('Sign up'))
-#    click_link "sample app2"
- #   expect(page).to have_title(full_title('Welcome to the Sample App2'))
   end
 end

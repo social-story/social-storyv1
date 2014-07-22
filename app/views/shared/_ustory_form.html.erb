@@ -1,9 +1,9 @@
-<%= form_for([micropost, @ustory]) do |f| %>
+<%= form_for (@ustory) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :story %>
   </div>
 <button class="btn" type="submit">
-    Create
+    Creat
   </button>
 <% end %>
